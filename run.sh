@@ -28,4 +28,4 @@ cd "$SLURM_SUBMIT_DIR"
 
 # Run training script
 echo "Startng job: $PWD"
-srun bash -c "cd $SLURM_SUBMIT_DIR && source .venv/bin/activate && python mnist.py"
+srun bash -c "cd $SLURM_SUBMIT_DIR && python mnist.py"
