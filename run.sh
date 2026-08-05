@@ -9,7 +9,7 @@
 #SBATCH --time=2:00:00
 
 #SBATCH --output=logs/mnist_model_%j.log
-#SBATCH --error=logs/mnist_models_%j.err
+#SBATCH --error=logs/mnist_model_%j.err
 
 #SBATCH --nodelist=hpc-novel-gpu[01-06]
 #SBATCH --nodes=1
@@ -28,4 +28,4 @@ cd "$SLURM_SUBMIT_DIR"
 
 # Run training script
 echo "Startng job: $PWD"
-srun bash -c "cd $SLURM_SUBMIT_DIR && python mnist.py"
+srun bash -c "cd $SLURM_SUBMIT_DIR && source .venv/bin/activate && python mnist.py"
